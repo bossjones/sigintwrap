@@ -13,7 +13,7 @@ def sig_forward(sig, frame):
         print "forwarding sig: %i" % sig
         os.kill(CHILD_PID, sig)
 
-def main(argv):
+def main():
     global CHILD_PID
 
     #install handlers
@@ -48,9 +48,10 @@ def main(argv):
                 return -1
 
     else:
-        os.execve(argv[1], argv[1:], os.environ)
+        os.execve(sys.argv[1], sys.argv[1:], os.environ)
         print "Failed to exec!"
         return -1
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv))
+    sys.exit(main())
+
