@@ -11,7 +11,7 @@ Usage
 
 After installing via:
 
-    pip install 
+    pip install sigintwrapper
 
 Use via:
 
